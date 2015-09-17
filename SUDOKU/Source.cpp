@@ -14,12 +14,17 @@ int main()
 	int tableSudoku[100][100];
 	int k=0;
 
+	
 	int i, j;
 	int i1=0, j1=0;
+
 	InputMatrixSudoku(k, tableSudoku);
-	for (i = 1; i <= k; i++)
+	
+	int n = k*k;
+
+	for (i = 1; i <= n; i++)
 	{
-		for (j = 1; j <= k; j++)
+		for (j = 1; j <= n; j++)
 			if (tableSudoku[i][j] == 0)
 			{
 				recusionSudoku(k,tableSudoku, i, j);
