@@ -5,24 +5,24 @@
 #include <fstream>
 
 using namespace std;
-void InputMatrixSudoku(int &n, int tableSudoku[100][100]);
+void InputMatrixSudoku(int &k, int tableSudoku[100][100]);
 void OutputMatrixSudoku(int n, int tableSudoku[100][100]);
-bool recusionSudoku(int tableSudoku[100][100], int i, int j);
+bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j);
 
 int main()
 {
 	int tableSudoku[100][100];
-	int n=0;
+	int k=0;
 
 	int i, j;
 	int i1=0, j1=0;
-	InputMatrixSudoku(n, tableSudoku);
-	for (i = 1; i <= n; i++)
+	InputMatrixSudoku(k, tableSudoku);
+	for (i = 1; i <= k; i++)
 	{
-		for (j = 1; j <= n; j++)
+		for (j = 1; j <= k; j++)
 			if (tableSudoku[i][j] == 0)
 			{
-				recusionSudoku(tableSudoku, i, j);
+				recusionSudoku(k,tableSudoku, i, j);
 			}
 
 	}
@@ -31,13 +31,13 @@ int main()
 	//OutputMatrixSudoku(n, a);
 }
 
-void InputMatrixSudoku(int &n, int tableSudoku[100][100])
+void InputMatrixSudoku(int &k, int tableSudoku[100][100])
 {
 	ifstream fileSudoku;
 	fileSudoku.open("input.txt");
-	fileSudoku >> n;
-	for (int i = 1; i <= n; i++)
-		for (int j = 1; j <= n; j++)
+	fileSudoku >> k;
+	for (int i = 1; i <= k; i++)
+		for (int j = 1; j <= k; j++)
 			fileSudoku >> tableSudoku[i][j];
 	fileSudoku.close(); 
 }
@@ -54,7 +54,7 @@ void OutputMatrixSudoku(int n, int tableSudoku[100][100])
 	fileSudoku.close();
 
 }
-bool recusionSudoku(int tableSudoku[100][100], int i, int j)
+bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 {
 	int i1, j1;
 	int k;
