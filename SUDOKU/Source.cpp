@@ -13,7 +13,7 @@ int main()
 	
 	int n = k*k;
 
-	bool checkSudoku;
+	bool checkSudoku=false;
 	for (i = 1; i <= n; i++)
 	{
 		for (j = 1; j <= n; j++)
