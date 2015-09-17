@@ -35,7 +35,14 @@ void OuputErrorSudoku(int k)
 	ofstream fileSudoku;
 	fileSudoku.open("ouput.txt");
 
-	if 
+	if (k == 1)
+	{
+		fileSudoku << "1";
+	}
+	else
+	{
+		fileSudoku << "Головоломка не мог решить";
+	}
 
 	fileSudoku.close();
 }

@@ -10,4 +10,6 @@ void InputMatrixSudoku(int &k, int tableSudoku[MAXK][MAXK]);
 
 void OutputMatrixSudoku(int k, int tableSudoku[MAXK][MAXK]);
 
+void OuputErrorSudoku(int k);
+
 bool recusionSudoku(int k, int tableSudoku[MAXK][MAXK], int i, int j);
