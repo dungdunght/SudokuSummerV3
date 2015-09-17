@@ -5,24 +5,24 @@
 #include <fstream>
 
 using namespace std;
-void InputMatrixSudoku(int &n, int a[100][100]);
-void OutputMatrixSudoku(int n, int a[100][100]);
-bool recusionSudoku(int a[100][100], int i, int j);
+void InputMatrixSudoku(int &n, int tableSudoku[100][100]);
+void OutputMatrixSudoku(int n, int tableSudoku[100][100]);
+bool recusionSudoku(int tableSudoku[100][100], int i, int j);
 
 int main()
 {
-	int a[100][100];
+	int tableSudoku[100][100];
 	int n=0;
 
 	int i, j;
 	int i1=0, j1=0;
-	InputMatrixSudoku(n, a);
+	InputMatrixSudoku(n, tableSudoku);
 	for (i = 1; i <= n; i++)
 	{
 		for (j = 1; j <= n; j++)
-			if (a[i][j] == 0)
+			if (tableSudoku[i][j] == 0)
 			{
-				recusionSudoku(a, i, j);
+				recusionSudoku(tableSudoku, i, j);
 			}
 
 	}
@@ -31,30 +31,30 @@ int main()
 	//OutputMatrixSudoku(n, a);
 }
 
-void InputMatrixSudoku(int &n, int a[100][100])
+void InputMatrixSudoku(int &n, int tableSudoku[100][100])
 {
 	ifstream fileSudoku;
 	fileSudoku.open("input.txt");
 	fileSudoku >> n;
 	for (int i = 1; i <= n; i++)
 		for (int j = 1; j <= n; j++)
-			fileSudoku >> a[i][j];
+			fileSudoku >> tableSudoku[i][j];
 	fileSudoku.close(); 
 }
-void OutputMatrixSudoku(int n, int a[100][100])
+void OutputMatrixSudoku(int n, int tableSudoku[100][100])
 {
 	ofstream fileSudoku;
 	fileSudoku.open("ouput.txt");
 	for (int i = 1; i <= n; i++)
 	{
 		for (int j = 1; j <= n; j++)
-			fileSudoku << a[i][j]<<" ";
+			fileSudoku << tableSudoku[i][j] << " ";
 		fileSudoku << endl;
 	}
 	fileSudoku.close();
 
 }
-bool recusionSudoku(int a[100][100], int i, int j)
+bool recusionSudoku(int tableSudoku[100][100], int i, int j)
 {
 	int i1, j1;
 	int k;
@@ -67,12 +67,12 @@ bool recusionSudoku(int a[100][100], int i, int j)
 		checkNumber = true;
 		for (j1 = 1; j1 <= 9; j1++)
 		{
-			if (a[i][j1] == k) checkNumber = false;
+			if (tableSudoku[i][j1] == k) checkNumber = false;
 
 		}
 		for (i1 = 1; i1 <= 9 && checkNumber; i1++)
 		{
-			if (a[i1][j] == k) checkNumber = false;
+			if (tableSudoku[i1][j] == k) checkNumber = false;
 		}
 
 
@@ -89,7 +89,7 @@ bool recusionSudoku(int a[100][100], int i, int j)
 			
 			for (int i2 = i1; i2 <= i1+2&&checkNumberSmallSquare; i2++)
 				for (int j2 = j1; j2 <= j1+2&&checkNumberSmallSquare; j2++)
-							if (a[i2][j2] == k)
+					if (tableSudoku[i2][j2] == k)
 								checkNumberSmallSquare = false;
 
 
@@ -105,16 +105,16 @@ bool recusionSudoku(int a[100][100], int i, int j)
 			{
 				bool checkNone = true;
 
-				a[i][j] = k;
+				tableSudoku[i][j] = k;
 				i1 = i; j1 = j;
 				while (i1 <= 9&&checkNone)
 				{
 					while (j1 <= 9&&checkNone)
 					{
-						if (a[i1][j1] == 0)
+						if (tableSudoku[i1][j1] == 0)
 						{
 							checkNone = false;
-							if (recusionSudoku(a, i1, j1)) return true;
+							if (recusionSudoku(tableSudoku, i1, j1)) return true;
 						}
 						j1++;
 					}
@@ -136,10 +136,10 @@ bool recusionSudoku(int a[100][100], int i, int j)
 
 				{
 					cout << "ascasc";
-					OutputMatrixSudoku(9, a);
+					OutputMatrixSudoku(9, tableSudoku);
 					return true;
 				}
-				a[i][j] = 0;
+				tableSudoku[i][j] = 0;
 			}
 		}	
 	}
