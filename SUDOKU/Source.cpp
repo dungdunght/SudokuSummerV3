@@ -83,12 +83,12 @@ bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 		{
 			bool checkNumberSmallSquare = true;
 
-			if (i % 3 == 0) i1 = i - 2;
+			if (i % k == 0) i1 = i - k+1;
 			else
-				i1 = (i / 3) * 3 + 1;
-			if (j % 3 == 0) j1 = j - 2;
+				i1 = (i / k) * k + 1;
+			if (j % k == 0) j1 = j - k+1;
 			else
-				j1 = (j / 3) * 3 + 1;
+				j1 = (j / k) * k + 1;
 			
 			for (int i2 = i1; i2 <= i1+2&&checkNumberSmallSquare; i2++)
 				for (int j2 = j1; j2 <= j1+2&&checkNumberSmallSquare; j2++)
