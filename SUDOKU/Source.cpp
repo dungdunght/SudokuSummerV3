@@ -57,22 +57,23 @@ void OutputMatrixSudoku(int n, int tableSudoku[100][100])
 bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 {
 	int i1, j1;
-	int k;
+	int s;
 
+	int n = k*k;
 
 	bool checkNumber = true;
 	
-	for (k = 1; k <= 9; k++)
+	for (s = 1; s <= n; s++)
 	{
 		checkNumber = true;
-		for (j1 = 1; j1 <= 9; j1++)
+		for (j1 = 1; j1 <= n; j1++)
 		{
-			if (tableSudoku[i][j1] == k) checkNumber = false;
+			if (tableSudoku[i][j1] == s)checkNumber = false;
 
 		}
-		for (i1 = 1; i1 <= 9 && checkNumber; i1++)
+		for (i1 = 1; i1 <= n && checkNumber; i1++)
 		{
-			if (tableSudoku[i1][j] == k) checkNumber = false;
+			if (tableSudoku[i1][j] == s) checkNumber = false;
 		}
 
 
@@ -89,7 +90,7 @@ bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 			
 			for (int i2 = i1; i2 <= i1+2&&checkNumberSmallSquare; i2++)
 				for (int j2 = j1; j2 <= j1+2&&checkNumberSmallSquare; j2++)
-					if (tableSudoku[i2][j2] == k)
+					if (tableSudoku[i2][j2] == s)
 								checkNumberSmallSquare = false;
 
 
@@ -105,16 +106,16 @@ bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 			{
 				bool checkNone = true;
 
-				tableSudoku[i][j] = k;
+				tableSudoku[i][j] = s;
 				i1 = i; j1 = j;
-				while (i1 <= 9&&checkNone)
+				while (i1 <= n&&checkNone)
 				{
-					while (j1 <= 9&&checkNone)
+					while (j1 <= n&&checkNone)
 					{
 						if (tableSudoku[i1][j1] == 0)
 						{
 							checkNone = false;
-							if (recusionSudoku(tableSudoku, i1, j1)) return true;
+							if (recusionSudoku(k,tableSudoku, i1, j1)) return true;
 						}
 						j1++;
 					}
