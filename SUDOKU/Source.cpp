@@ -25,9 +25,7 @@ int main()
 	}
 	
 	if (!checkSudoku)
-
-
-
+		OuputErrorSudoku(k);
 
 }
 
