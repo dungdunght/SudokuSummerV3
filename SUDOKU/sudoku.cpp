@@ -29,6 +29,16 @@ void OutputMatrixSudoku(int k, int tableSudoku[MAXK][MAXK])
 	fileSudoku.close();
 
 }
+
+void OuputErrorSudoku(int k)
+{
+	ofstream fileSudoku;
+	fileSudoku.open("ouput.txt");
+
+	if 
+
+	fileSudoku.close();
+}
 bool recusionSudoku(int k, int tableSudoku[MAXK][MAXK], int i, int j)
 {
 	int i1, j1;

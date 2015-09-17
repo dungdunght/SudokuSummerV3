@@ -13,15 +13,20 @@ int main()
 	
 	int n = k*k;
 
+	bool checkSudoku;
 	for (i = 1; i <= n; i++)
 	{
 		for (j = 1; j <= n; j++)
 			if (tableSudoku[i][j] == 0)
 			{
-				recusionSudoku(k,tableSudoku, i, j);
+				checkSudoku=recusionSudoku(k,tableSudoku, i, j);
 			}
 
 	}
+	
+	if (!checkSudoku)
+
+
 
 }
 
