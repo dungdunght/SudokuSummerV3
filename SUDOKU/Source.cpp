@@ -6,7 +6,7 @@
 
 using namespace std;
 void InputMatrixSudoku(int &k, int tableSudoku[100][100]);
-void OutputMatrixSudoku(int n, int tableSudoku[100][100]);
+void OutputMatrixSudoku(int k, int tableSudoku[100][100]);
 bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j);
 
 int main()
@@ -43,10 +43,13 @@ void InputMatrixSudoku(int &k, int tableSudoku[100][100])
 			fileSudoku >> tableSudoku[i][j];
 	fileSudoku.close(); 
 }
-void OutputMatrixSudoku(int n, int tableSudoku[100][100])
+void OutputMatrixSudoku(int k, int tableSudoku[100][100])
 {
 	ofstream fileSudoku;
 	fileSudoku.open("ouput.txt");
+
+	int n = k*k;
+
 	for (int i = 1; i <= n; i++)
 	{
 		for (int j = 1; j <= n; j++)
@@ -139,7 +142,7 @@ bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 
 				{
 					cout << "ascasc";
-					OutputMatrixSudoku(9, tableSudoku);
+					OutputMatrixSudoku(k, tableSudoku);
 					return true;
 				}
 				tableSudoku[i][j] = 0;
