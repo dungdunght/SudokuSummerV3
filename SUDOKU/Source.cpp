@@ -33,7 +33,7 @@ int main()
 	}
 
 
-	//OutputMatrixSudoku(n, a);
+	
 }
 
 void InputMatrixSudoku(int &k, int tableSudoku[100][100])
@@ -104,13 +104,7 @@ bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 								checkNumberSmallSquare = false;
 
 
-			//for (i1 = i - 2; i1 <= i&&checkNumberSmallSquare; i1++)
-			//	for (j1 = j - 2; j1 <= j&&checkNumberSmallSquare; j1++)
-			//		if (i1 > 0 && j1 > 0)
-			//			if (i1 != i&&j1 != j)
-			//				if (a[i1][j1] == k)
-			//					checkNumberSmallSquare = false;
-
+		
 			
 			if (checkNumberSmallSquare)
 			{
@@ -134,15 +128,7 @@ bool recusionSudoku(int k,int tableSudoku[100][100], int i, int j)
 				}
 				
 
-				//for (i1 = i; i1 <= 9&&checkNone; i1++)
-				//	for (j1 = j; j1 <= 9&&checkNone; j1++)
-				//	{
-				//		if (a[i1][j1] == 0)
-				//		{
-				//			checkNone = false;
-				//			if (recusionSudoku(a, i1, j1)) return true;
-				//		}
-				//	}
+
 				if (checkNone)
 
 				{
