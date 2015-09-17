@@ -36,8 +36,10 @@ void InputMatrixSudoku(int &k, int tableSudoku[100][100])
 	ifstream fileSudoku;
 	fileSudoku.open("input.txt");
 	fileSudoku >> k;
-	for (int i = 1; i <= k; i++)
-		for (int j = 1; j <= k; j++)
+
+	int n=k*k;
+	for (int i = 1; i <= n; i++)
+		for (int j = 1; j <= n; j++)
 			fileSudoku >> tableSudoku[i][j];
 	fileSudoku.close(); 
 }
