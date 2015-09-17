@@ -41,7 +41,7 @@ void OuputErrorSudoku(int k)
 	}
 	else
 	{
-		fileSudoku << "Головоломка не мог решить";
+		fileSudoku << "Sudoku error";
 	}
 
 	fileSudoku.close();
