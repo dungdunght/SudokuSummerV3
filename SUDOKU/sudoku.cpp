@@ -22,6 +22,29 @@ void InputMatrixSudoku(int &k, int tableSudoku[MAXK][MAXK])
 }
 
 /*!
+* Проверить правильно ли головоломке "Судоку"
+* \param[out] k - размер головоломку
+* \param[out] tableSudoku[MAXK][MAXK] - массив сохнраняет головоломку
+*/
+
+
+bool checkErrorSudoku(int k,int tableSudoku[MAXK][MAXK])
+{
+	bool checkNumber[10];
+	int n = k*k;
+	for (int i = 1; i <= n; i++)
+	{
+		for (int i1 = 1; i1 < 10; i1++) checkNumber[i] = true;
+		for (int j = 1; j <= n; j++)
+		{
+			if (!checkNumber[j] && tableSudoku[i][j] != 0) return 0;
+
+		}
+	}
+
+}
+
+/*!
 * Выводить головоломку на файл output.txt
 * \param[in] k - размер головоломку
 * \param[in] tableSudoku[MAXK][MAXK] - массив сохнраняет головоломку
