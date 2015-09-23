@@ -37,8 +37,6 @@ bool checkErrorSudoku(int k,int tableSudoku[MAXK][MAXK])
 		for (int i1 = 1; i1 < 10; i1++) checkNumber[i] = true;
 		for (int j = 1; j <= n; j++)
 		{
-			if (!checkNumber[j] && tableSudoku[i][j] != 0) return 0;
-
 			if (tableSudoku[i][j] != 0)
 			{
 				if (!checkNumber[j]) return 0;
