@@ -28,7 +28,6 @@ void InputMatrixSudoku(int &k, int tableSudoku[MAXK][MAXK])
 */
 
 
-bool checkErrorSudoku(int k,int tableSudoku[MAXK][MAXK])
 {
 	bool checkNumber[10];
 	int n = k*k;
