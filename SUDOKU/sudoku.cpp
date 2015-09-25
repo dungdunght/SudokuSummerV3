@@ -112,7 +112,6 @@ void OuputErrorSudoku(int k)
 	else
 	{
 		//выводить сообщение если головоломке неправильно
-		fileSudoku << "Sudoku error";
 	}
 
 	fileSudoku.close();
