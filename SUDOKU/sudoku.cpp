@@ -69,7 +69,6 @@ bool checkInputSudoku(int k,int tableSudoku[MAXK][MAXK],int &i_false,int &j_fals
 		}
 	}
 
-	 
 
 }
 
