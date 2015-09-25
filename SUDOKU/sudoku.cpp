@@ -98,7 +98,6 @@ void OutputMatrixSudoku(int k, int tableSudoku[MAXK][MAXK])
 
 /*!
 * \param[in] k - размер головоломку
-* \param[in] tableSudoku[MAXK][MAXK] - массив сохнраняет головоломку
 */
 void OuputErrorSudoku(int k)
 {
