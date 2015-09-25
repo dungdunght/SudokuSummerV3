@@ -102,7 +102,9 @@ void OutputMatrixSudoku(int k, int tableSudoku[MAXK][MAXK])
 */
 
 /*!
+* Выводить сообщение о нерешающей головоломке на файл output.txt
 * \param[in] k - размер головоломку
+* 
 */
 void OuputErrorSudoku(int k)
 {
