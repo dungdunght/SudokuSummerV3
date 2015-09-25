@@ -76,6 +76,8 @@ bool checkInputSudoku(int k,int tableSudoku[MAXK][MAXK],int &i_false,int &j_fals
 			for (int i1 = i; i1 <= i + k - 1; i1++)
 				for (int j1 = j; j1 <= j + k - 1;j1++)
 				{
+					if (tableSudoku[i1][j1] != 0)
+					{
 
 }
 
