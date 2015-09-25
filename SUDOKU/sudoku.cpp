@@ -95,6 +95,11 @@ void OutputMatrixSudoku(int k, int tableSudoku[MAXK][MAXK])
 
 }
 
+/*!
+* Выводить сообщение о неправилном входе данных на файл output.txt
+* \param[in] i_false,j_false - первая позиция где положил неправильно число
+*
+*/
 
 /*!
 * \param[in] k - размер головоломку
