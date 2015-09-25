@@ -63,6 +63,8 @@ bool checkInputSudoku(int k,int tableSudoku[MAXK][MAXK],int &i_false,int &j_fals
 				{
 					i_false = i;
 					j_false = j;
+					return 0;
+				}
 				checkNumber[tableSudoku[i][j]] = false;
 			}
 		}
