@@ -55,6 +55,12 @@ bool checkErrorSudoku(int k,int tableSudoku[MAXK][MAXK])
 			{
 				if (!checkNumber[tableSudoku[i][j]]) return 0;
 				checkNumber[tableSudoku[i][j]] = false;
+			}
+		}
+	}
+
+	 
+
 }
 
 /*!
